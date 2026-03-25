@@ -1,0 +1,92 @@
+.diet-page { max-width: 1000px; }
+
+.diet-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px; flex-wrap: wrap; gap: 14px;
+}
+.tdee-pill {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--bg-card); border: 1px solid var(--border-accent);
+  border-radius: var(--radius); padding: 10px 16px;
+  font-size: 13px; color: var(--text-secondary);
+}
+.surplus-tag {
+  padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-left: 4px;
+}
+.surplus-tag.deficit { background: rgba(52,211,153,0.12); color: var(--success); }
+.surplus-tag.surplus { background: rgba(167,139,250,0.12); color: var(--accent); }
+
+/* Filters panel */
+.diet-filters-panel {
+  background: var(--bg-card); border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg); padding: 20px 24px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+.dfp-row   { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 16px; }
+.dfp-group { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 200px; }
+.dfp-group label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; }
+.dfp-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.dfp-reset { display: flex; justify-content: flex-end; padding-top: 8px; border-top: 1px solid var(--border); }
+
+/* Stats row */
+.diet-stats-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.diet-stat-pill {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 16px; min-width: 80px;
+}
+.dsp-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
+.dsp-val   { font-size: 14px; font-weight: 700; }
+
+/* Macro grid */
+.macro-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 16px; margin-bottom: 28px;
+}
+.macro-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+}
+.macro-cal {
+  border-color: var(--border-accent);
+  background: linear-gradient(135deg, rgba(167,139,250,0.1), rgba(96,165,250,0.06));
+}
+.macro-val   { font-size: 30px; font-weight: 900; margin-bottom: 4px; }
+.macro-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.macro-note  { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+.macro-bar   { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.macro-bar div { height: 100%; border-radius: 2px; transition: width 1s ease; }
+
+/* Meals */
+.meals-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 24px;
+}
+.meal-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  transition: all 0.2s;
+}
+.meal-card:hover { border-color: var(--border-accent); transform: translateY(-2px); }
+.meal-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.meal-icon   { font-size: 28px; flex-shrink: 0; }
+.meal-name   { font-size: 15px; font-weight: 700; }
+.meal-macros { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+.meal-items { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.meal-items li { font-size: 13px; color: var(--text-secondary); padding-left: 16px; position: relative; line-height: 1.5; }
+.meal-items li::before { content: '◆'; position: absolute; left: 0; top: 3px; color: var(--accent); font-size: 7px; }
+
+.diet-note {
+  font-size: 13px; color: var(--text-muted); padding: 14px 18px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .macro-grid { grid-template-columns: 1fr 1fr; }
+  .meals-grid { grid-template-columns: 1fr; }
+  .dfp-row    { flex-direction: column; }
+}

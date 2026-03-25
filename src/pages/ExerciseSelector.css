@@ -1,0 +1,63 @@
+.exercise-page { max-width: 1200px; }
+
+.exercise-filters { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+
+.search-input {
+  max-width: 480px;
+  background: rgba(13,11,26,0.8) !important;
+  border: 1px solid var(--border-accent) !important;
+}
+.search-input:focus { box-shadow: 0 0 0 3px rgba(167,139,250,0.2) !important; }
+
+.filter-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip {
+  padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;
+  background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+.chip.active { background: var(--accent-glow); border-color: var(--border-accent); color: var(--accent); box-shadow: 0 0 12px rgba(167,139,250,0.2); }
+
+.results-count { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
+.exercise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.exercise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  display: flex; flex-direction: column;
+  transition: all 0.25s;
+  overflow: hidden;
+  position: relative;
+}
+.exercise-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(167,139,250,0.15);
+}
+
+.ex-cat-bar { height: 3px; width: 100%; flex-shrink: 0; }
+
+.ex-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 18px 18px 10px; }
+.ex-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.ex-muscle { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.ex-diff { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; flex-shrink: 0; }
+
+.ex-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; flex: 1; padding: 0 18px 14px; }
+
+.ex-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.ex-btn { padding: 8px 18px; font-size: 13px; }
+
+.loading-center { display: flex; justify-content: center; padding: 80px; }
+.empty-state { grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 80px; font-size: 15px; }
+
+@media (max-width: 1000px) { .exercise-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .exercise-grid { grid-template-columns: 1fr; } }

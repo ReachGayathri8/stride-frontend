@@ -144,3 +144,22 @@
 
 @keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
 @media (max-width:900px) { .workout-layout { grid-template-columns:1fr; } }
+
+/* Tutorial video */
+.tutorial-video-wrap {
+  width: 100%; aspect-ratio: 16/9; max-height: 380px;
+  border-radius: var(--radius-lg); overflow: hidden;
+  margin-bottom: 20px; border: 1px solid var(--border-accent);
+}
+.tutorial-video-wrap iframe { width: 100%; height: 100%; border: none; }
+
+/* Voice hints bar */
+.voice-hints {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 16px;
+  margin-bottom: 20px; font-size: 13px;
+}
+.vh-label { font-weight: 700; color: var(--text-muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.06em; }
+.vh-item  { color: var(--text-secondary); }
+.vh-item em { color: var(--accent); font-style: normal; font-weight: 600; }

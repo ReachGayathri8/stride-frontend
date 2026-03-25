@@ -1,20 +1,37 @@
-.history-page { max-width: 960px; }
-.history-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
-.history-list { display: flex; flex-direction: column; gap: 12px; }
-
+.history-page { max-width: 1000px; }
+.history-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 24px; }
+.history-controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.hc-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hc-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.07em; min-width: 36px; }
+.history-list { display: flex; flex-direction: column; gap: 10px; }
 .session-card {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 16px;
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 20px 24px;
-  transition: all 0.2s; flex-wrap: wrap; gap: 14px;
+  border-radius: var(--radius); padding: 16px 20px;
+  transition: all 0.2s; flex-wrap: wrap;
 }
 .session-card:hover { border-color: var(--border-accent); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(167,139,250,0.1); }
-.session-exercise { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-.session-date    { font-size: 12px; color: var(--text-muted); }
-.session-right   { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-.session-stat    { text-align: center; }
-.s-val   { font-size: 22px; font-weight: 800; }
-.s-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
-.acc-badge { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.session-number { font-size: 12px; color: var(--text-muted); min-width: 28px; font-weight: 700; }
+.session-main  { flex: 1; min-width: 160px; }
+.session-exercise { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.session-date  { font-size: 12px; color: var(--text-muted); }
+.session-time  { color: var(--text-muted); }
+.status-pill {
+  display: inline-block; margin-top: 6px;
+  padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;
+}
+.status-pill.completed  { background: rgba(52,211,153,0.1);  color: var(--success); }
+.status-pill.inprogress { background: rgba(167,139,250,0.1); color: var(--accent);  }
+.status-pill.abandoned  { background: rgba(248,113,113,0.1); color: var(--danger);  }
+.session-metrics { display: flex; gap: 20px; align-items: center; }
+.sm-item { text-align: center; }
+.sm-val  { font-size: 20px; font-weight: 800; }
+.sm-label{ font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+.acc-badge { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
 .empty-state { text-align: center; padding: 80px; color: var(--text-muted); font-size: 15px; }
-@media (max-width: 600px) { .session-right { gap: 16px; } }
+@media (max-width: 800px) {
+  .history-stats { grid-template-columns: repeat(3, 1fr); }
+  .session-metrics { gap: 12px; }
+}
+@media (max-width: 500px) { .history-stats { grid-template-columns: 1fr 1fr; } }

@@ -25,7 +25,7 @@ function calcMacros(user, overrides = {}) {
   const fatG     = Math.round((calories * 0.25) / 9);
   const carbsG   = Math.round((calories - proteinG * 4 - fatG * 9) / 4);
 
-  return { tdee, calories, proteinG, carbsG, fatG, bmr: Math.round(bmr), goal, diet, bgt, w };
+ return { tdee, calories, proteinG, carbsG, fatG, bmr: Math.round(bmr), goal, diet, bgt };
 }
 
 // ─── Food database keyed by (diet × budget) ─────────────────────────────────

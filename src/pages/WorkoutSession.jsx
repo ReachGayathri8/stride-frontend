@@ -36,7 +36,7 @@ export default function WorkoutSession() {
   const canvasRef  = useRef(null);
   const streamRef  = useRef(null);
 
-  const [exercise, setExercise]         = useState(state?.exercise ?? null);
+  const [exercise] = useState(state?.exercise ?? null);
   const [rules, setRules]               = useState(null);
   const [camReady, setCamReady]         = useState(false);
   const [camError, setCamError]         = useState('');
@@ -128,7 +128,7 @@ export default function WorkoutSession() {
   useEffect(() => {
     startCamera(selectedCam);
     return () => { if (streamRef.current) streamRef.current.getTracks().forEach(t => t.stop()); };
-  }, []);
+  }, [selectedCam, startCamera]);
 
   const switchCamera = async (deviceId) => {
     setSelectedCam(deviceId);

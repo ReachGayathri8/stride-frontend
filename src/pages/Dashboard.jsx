@@ -12,8 +12,7 @@ export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [stats, setStats]   = useState(null);
-  const [loading, setLoading] = useState(true);
-
+  const [, setLoading] = useState(true);
   useEffect(() => {
     analyticsApi.getDashboard()
       .then(r => setStats(r.data))
